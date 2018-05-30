@@ -1,21 +1,11 @@
 ##
 # Ansible playbook that uses the PostgreSQL module.
 #
-
 - hosts: localhost
   become: yes
-
   pre_tasks:
     - name: Update repositories
-      apt: update cache=yes
+      apt: update_cache=yes
       changed_when: False
-
   tasks:
-  - name: ensure apt cache is up to date
-    apt: update_cache=yes
-  - name: ensure packages are installed
-    apt: name={{item}}
-    with_items:
-        - postgresql
-        - libpq-dev
-        - python-psycopg2
+    - include: tasks/postgresql.yml

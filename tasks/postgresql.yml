@@ -1,12 +1,9 @@
 ##
 # Ansible playbook that uses the PostgreSQL module.
 #
-
-  - name: ensure apt cache is up to date
-    apt: update_cache=yes
-  - name: ensure packages are installed
-    apt: name={{item}}
-    with_items:
-        - postgresql
-        - libpq-dev
-        - python-psycopg2
+- name: ensure packages are installed
+  apt: name={{item}}
+  with_items:
+      - postgresql
+      - libpq-dev
+      - python-psycopg2
