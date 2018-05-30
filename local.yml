@@ -16,3 +16,4 @@
       when: accepted_oracle_license == 'y' or accepted_oracle_license == 'yes' and (ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial')
     - include: tasks/postgresql.yml
     - include: tasks/pgadmin.yml
+    - include: tasks/python.yml
