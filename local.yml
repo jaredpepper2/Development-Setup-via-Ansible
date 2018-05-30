@@ -1,0 +1,14 @@
+##
+# Ansible playbook that uses the PostgreSQL module.
+#
+
+- hosts: localhost
+  become: yes
+
+  pre_tasks:
+    - name: Update repositories
+      apt: update cache=yes
+      changed_when: False
+
+  tasks:
+    - include: tasks/postgresql.yml
