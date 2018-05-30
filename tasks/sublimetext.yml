@@ -1,0 +1,7 @@
+#
+# Ansible playbook that uses the sublime text module.
+#
+- name: Install Maven
+  apt: name={{item}}
+  with_items:
+      - maven

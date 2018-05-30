@@ -1,0 +1,7 @@
+#
+# Ansible playbook that uses the kdiff3 module.
+#
+- name: Install Kdiff3
+  apt: name={{item}}
+  with_items:
+      - kdiff3

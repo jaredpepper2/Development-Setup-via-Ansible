@@ -1,0 +1,39 @@
+#
+# Ansible playbook that uses the git module.
+#
+- name: Install Curl & Ruby
+  apt: name={{item}}
+  with_items:
+      - curl
+      - ruby-full
+      - linuxbrew-wrapper
+      - build-essential
+      - sed
+- name: Homebrew Setup
+  shell: 'apt-get install -y build-essential make cmake scons curl git \ ruby autoconf automake autoconf-archive \ gettext libtool flex bison \ libbz2-dev libcurl4-openssl-dev \ libexpat-dev libncurses-dev'
+- name: Check that the LinuxBrew repo exists or not
+  stat:
+    path: ~/.linuxbrew
+  register: stat_result
+- name: Clone LinuxBrew if it has not been cloned
+  become_user: jaredpepper2
+  shell: 'git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew'
+  when: stat_result.stat.exists == False
+- name: Check whether Nifi exists or not
+  stat:
+    path: ~/.linuxbrew/opt/nifi
+  register: nifi_exists
+- name: Insall Nifi via Homebrew if it does not exist
+  become_user: jaredpepper2
+  shell: 'brew install nifi'
+  when: nifi_exists.stat.exists == False
+
+  # Add notes for adding to bash_profile
+  # Add notes for updating user
+
+#- name: Set Env Variable 1
+#  shell: 'export PATH="$HOME/.linuxbrew/bin:$PATH"'
+#- name: Set Env Variable 2
+#  shell: 'export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"'
+#- name: Set Env Variable 3
+#  shell: 'echo ''export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"''' >>~/.bash_profile'
