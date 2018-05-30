@@ -1,7 +1,7 @@
 ##
 # Ansible playbook that uses the PostgreSQL module.
 #
-- name: ensure packages are installed
+- name: Install PostgreSQL & Dependencies
   apt: name={{item}}
   with_items:
       - postgresql
