@@ -26,8 +26,8 @@
       when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
     - include: tasks/slack.yml
       when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
-  #  - include: tasks/intelliJCommunity.yml
-  #    when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
+    - include: tasks/intelliJCommunity.yml
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
     - include: tasks/atom.yml
       when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
     - include: tasks/nifi.yml
