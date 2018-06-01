@@ -39,7 +39,7 @@ This script will run much quicker after its initial run.
 - Curl
 - Ruby
 
-##T o Do:
+## To Do:
 
 - Force development machines to poll this repo on a cycle
 - Configure Postgress
