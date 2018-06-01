@@ -7,6 +7,8 @@
     - name: 'accepted_oracle_license'
       prompt: 'Do you accept the Java 8 Oracle License?'
       default: 'no'
+  vars:
+     username: "{{ lookup('file', '/opt/Ansible/username.txt') }}"
   tasks:
     - include: tasks/java8.yml
       when: accepted_oracle_license == 'y' or accepted_oracle_license == 'yes' and (ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial')

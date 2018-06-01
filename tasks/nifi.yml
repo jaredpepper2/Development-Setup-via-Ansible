@@ -15,8 +15,9 @@
   stat:
     path: ~/.linuxbrew
   register: stat_result
+- debug: msg="Parsing in {{ username }}"
 - name: Clone LinuxBrew if it has not been cloned
-  become_user: jaredpepper2
+  become_user: "{{ username }}"
   shell: 'git clone https://github.com/Linuxbrew/brew.git ~/.linuxbrew'
   when: stat_result.stat.exists == False
 - name: Check whether Nifi exists or not
@@ -24,7 +25,7 @@
     path: ~/.linuxbrew/opt/nifi
   register: nifi_exists
 - name: Insall Nifi via Homebrew if it does not exist
-  become_user: jaredpepper2
+  become_user: "{{ username }}"
   shell: 'brew install nifi'
   when: nifi_exists.stat.exists == False
 
