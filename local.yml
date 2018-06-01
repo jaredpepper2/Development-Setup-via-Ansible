@@ -24,6 +24,8 @@
       when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
     - include: tasks/kdiff3.yml
       when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
+    - include: tasks/geany.yml
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
     - include: tasks/slack.yml
       when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
     - include: tasks/intelliJCommunity.yml
