@@ -13,7 +13,8 @@ sudo apt-get update
 sudo apt-get install -y ansible
 
 # Setting Up
-sudo mkdir -p /home/$me/Documents/Ansible
+me="$(whoami)"
+mkdir -p /home/$me/Documents/Ansible
 sudo echo $me > /home/$me/Documents/Ansible/username.txt
 sudo mkdir -p /opt/Ansible
 sudo mv /home/$me/Documents/Ansible/username.txt /opt/Ansible
