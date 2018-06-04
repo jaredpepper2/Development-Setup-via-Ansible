@@ -13,7 +13,6 @@ sudo apt-get update
 sudo apt-get install -y ansible
 
 # Setting Up
-me="$(whoami)"
 sudo mkdir -p /home/$me/Documents/Ansible
 sudo echo $me > /home/$me/Documents/Ansible/username.txt
 sudo mkdir -p /opt/Ansible
@@ -24,4 +23,3 @@ sudo ansible-pull -U https://github.com/jaredpepper2/Development-Setup-via-Ansib
 
 #Clean up
 sudo rm /opt/Ansible/username.txt
-sudo rm /home/$me/Documents/Ansible/username.txt
