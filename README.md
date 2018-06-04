@@ -8,8 +8,7 @@ You do not need to run the 'setup-dev-env.sh' as sudo, please run it as your use
 
 The commands that needs to be run once you have downloaded 'setup-dev-env.sh' are:
 
-1. **me="$(whoami)"**
-2. **./setup-dev-env.sh**
+1. **./setup-dev-env.sh**
 
 ## To Note:
 The script can take a long time to run for the first time, depending on your internet connection. If the script appears to hang on an Ansible Task, please give it time to finish.
