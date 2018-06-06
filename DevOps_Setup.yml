@@ -1,5 +1,5 @@
 ##
-# Ansible playbook for setting up a Development Enviroment.
+# Ansible playbook for setting up a DevOps Enviroment.
 #
 - hosts: localhost
   become: yes
