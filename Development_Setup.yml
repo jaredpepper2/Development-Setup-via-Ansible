@@ -3,8 +3,8 @@
 #
 - hosts: localhost
   become: yes
-  vars_files:
-    - vars/main.yml
+  vars:
+     username: "{{ lookup('file', '/opt/Ansible/username.txt') }}"
   roles:
     - common
     - tools

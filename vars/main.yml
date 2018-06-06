@@ -1,2 +1,0 @@
-  vars:
-     username: "{{ lookup('file', '/opt/Ansible/username.txt') }}"
