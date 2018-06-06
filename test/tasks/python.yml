@@ -1,7 +1,0 @@
-##
-# Ansible playbook that uses the python module.
-#
-- name: Install Python3.6
-  apt: name={{item}}
-  with_items:
-      - python3.6

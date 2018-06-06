@@ -1,7 +1,0 @@
-#
-# Ansible playbook that uses the git module.
-#
-- name: Install git
-  apt: name={{item}}
-  with_items:
-      - git

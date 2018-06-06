@@ -1,7 +1,0 @@
-##
-# Ansible playbook that uses the Geany module.
-#
-- name: Install Geany
-  apt: name={{item}}
-  with_items:
-      - geany

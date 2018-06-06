@@ -20,7 +20,7 @@ sudo mkdir -p /opt/Ansible
 sudo mv /home/$me/Documents/Ansible/username.txt /opt/Ansible
 
 #Ansible magic
-sudo ansible-pull -U https://github.com/jaredpepper2/Development-Setup-via-Ansible
+sudo ansible-pull -U https://github.com/jaredpepper2/Development-Setup-via-Ansible/tree/master/test
 
 #Clean up
 sudo rm /opt/Ansible/username.txt

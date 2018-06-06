@@ -1,7 +1,0 @@
-#
-# Ansible playbook that uses the maven module.
-#
-- name: Install Maven
-  apt: name={{item}}
-  with_items:
-      - maven
