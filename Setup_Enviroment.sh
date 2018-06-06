@@ -1,5 +1,6 @@
 #!/bin/bash
 enviroment_type=$1
+REPOSRC="https://github.com/jaredpepper2/Development-Setup-via-Ansible.git"
 
 case "$enviroment_type" in
 
@@ -38,18 +39,31 @@ sudo apt-add-repository -y ppa:ansible/ansible
 sudo apt-get update
 sudo apt-get install -y ansible
 
-# Setting Up
+# Setting Up Ansible Variables
 me="$(whoami)"
 mkdir -p /home/$me/Documents/Ansible
-sudo rm -rf /home/$me/Documents/Ansible/Development-Setup-via-Ansible
 sudo echo $me > /home/$me/Documents/Ansible/username.txt
 sudo mkdir -p /opt/Ansible
 sudo mv /home/$me/Documents/Ansible/username.txt /opt/Ansible
 
-git clone https://github.com/jaredpepper2/Development-Setup-via-Ansible.git /home/$me/Documents/Ansible
+# Getting Latest Version of Git Repo
+LOCALREPO="/home/$me/Documents/Ansible"
+LOCALREPO_VC_DIR="$LOCALREPO"/.git
+
+if [ ! -d "$LOCALREPO_VC_DIR" ]
+then
+    cd "$LOCALREPO"
+    echo "Cloning latest version of Repository"
+    git clone "$REPOSRC"
+else
+    cd "$LOCALREPO"
+    echo "Pulling latest version of Repository"
+    git pull "$REPOSRC"
+fi
 
 #Ansible magic
-sudo ansible-playbook /home/$me/Documents/Ansible/"$enviroment_type"_setup.yml
-#sudo ansible-pull -U https://github.com/jaredpepper2/Development-Setup-via-Ansible
+sudo ansible-playbook /home/$me/Documents/Ansible/Development-Setup-via-Ansible/"$enviroment_type"_Setup.yml
+
 #Clean up
 sudo rm /opt/Ansible/username.txt
+sudo rm /home/$me/Documents/Ansible
