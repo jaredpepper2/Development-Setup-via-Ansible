@@ -4,7 +4,7 @@
 - hosts: localhost
   become: yes
   vars:
-     username: "{{ lookup('file', '/opt/Ansible/username.txt') }}"
+     username: "{{ lookup('file', '/tmp/Ansible/username.txt') }}"
   roles:
     - common
     - tools

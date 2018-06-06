@@ -24,8 +24,8 @@ Configure_Enviroment()
   me="$(whoami)"
   mkdir -p /home/$me/Documents/Ansible
   sudo echo $me > /home/$me/Documents/Ansible/username.txt
-  sudo mkdir -p /opt/Ansible
-  sudo mv /home/$me/Documents/Ansible/username.txt /opt/Ansible
+  sudo mkdir -p /tmp/Ansible
+  sudo mv /home/$me/Documents/Ansible/username.txt /tmp/Ansible
 
   # Getting Latest Version of Git Repo
   LOCALREPO="/home/$me/Documents/Ansible"
