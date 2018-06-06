@@ -80,7 +80,7 @@ Clean_Up
     ;;
 dev | development | Dev | Development)
 echo "Setting up a Development Enviroment on your machine"
-enviroment_type="Developer"
+enviroment_type="Development"
 
 # Run Functions
 Install_Ansible
