@@ -1,0 +1,10 @@
+##
+# Ansible playbook that uses the Intelli J Community module.
+#
+- name: Install Ubuntu Make
+  apt: name={{item}}
+  with_items:
+      - ubuntu-make
+      - python-pexpect
+#- name: Install IntelliJ Community
+#  shell: 'umake ide idea'

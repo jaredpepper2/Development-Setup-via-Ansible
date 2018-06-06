@@ -1,0 +1,9 @@
+##
+# Install DevOps Toolsets for DevOps Role
+#
+  - include: tasks/kubernetes.yml
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
+  - include: tasks/docker.yml
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
+  - include: tasks/drone.yml
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'

@@ -1,0 +1,15 @@
+##
+# Ansible playbook that uses the java module.
+#
+- name: Add Java 8 repo to apt
+  apt_repository:
+    repo: ppa:webupd8team/java
+- name: Update repositories
+  apt: update_cache=yes
+  changed_when: False
+- name: Marking Oracle license as viewed
+  shell: 'echo debconf shared/accepted-oracle-license-v1-1 select true | sudo debconf-set-selections'
+- name: Marking Oracle license as agreed as user has accepted
+  shell: 'echo debconf shared/accepted-oracle-license-v1-1 seen true | sudo debconf-set-selections'
+- name: Install Java 8
+  apt: name=oracle-java8-installer

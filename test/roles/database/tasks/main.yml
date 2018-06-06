@@ -1,0 +1,7 @@
+##
+# Install Database Packages & Toolsets for DB Role
+#
+    - include: tasks/postgresql.yml
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
+    - include: tasks/pgadmin.yml
+      when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'

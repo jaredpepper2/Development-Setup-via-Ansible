@@ -1,0 +1,9 @@
+- name: Install packages
+  apt: name={{item}}
+  with_items:
+    - openvpn
+    - curl
+    - apt-transport-https
+    - ca-certificates
+    - software-properties-common
+    - network-manager-openvpn-gnome

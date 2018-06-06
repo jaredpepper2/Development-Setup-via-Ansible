@@ -1,0 +1,25 @@
+- name: Download Drone
+  get_url:
+    url: http://downloads.drone.io/release/linux/amd64/drone.tar.gz
+    dest: /tmp/drone.tar.gz
+    force: yes
+- name: Create Drone extract dir
+  file:
+    path: /tmp/drone-install
+    state: directory
+    mode: 0755
+- name: Unzip Drone tarball
+  unarchive:
+    src: /tmp/drone.tar.gz
+    dest: /tmp/drone-install
+    remote_src: yes
+- name: Install Drone
+  shell: 'install -t /usr/local/bin /tmp/drone-install/drone'
+- name: Cleanup Drone install file
+  file:
+    path: /tmp/drone.tar.gz
+    state: absent
+- name: Cleanup Drone extracted files
+  file:
+    path: /tmp/drone-install
+    state: absent
