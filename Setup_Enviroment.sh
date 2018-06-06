@@ -8,11 +8,11 @@ echo "Setting up a DevOps Enviroment on your machine"
 $enviroment_type = DevOps
     ;;
 test | tester | Test | Tester)
-echo "Setting up a DevOps Enviroment on your machine"
+echo "Setting up a Tester Enviroment on your machine"
 $enviroment_type = Tester
     ;;
 dev | development | Dev | Development)
-echo "Setting up a DevOps Enviroment on your machine"
+echo "Setting up a Development Enviroment on your machine"
 $enviroment_type = Developer
     ;;
 management | Managment | manage | Manage)
@@ -49,7 +49,7 @@ sudo mv /home/$me/Documents/Ansible/username.txt /opt/Ansible
 git clone https://github.com/jaredpepper2/Development-Setup-via-Ansible.git /home/$me/Documents/Ansible
 
 #Ansible magic
-sudo ansible-playbook /home/$me/Documents/Ansible/($enviroment_type)_setup.yml
+sudo ansible-playbook /home/$me/Documents/Ansible/"$enviroment_type"_setup.yml
 #sudo ansible-pull -U https://github.com/jaredpepper2/Development-Setup-via-Ansible
 #Clean up
 sudo rm /opt/Ansible/username.txt
