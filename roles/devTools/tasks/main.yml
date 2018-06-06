@@ -1,0 +1,10 @@
+##
+# Install Development Tools for DB Role
+#
+
+  - include: tasks/nifi.yml
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
+  - include: tasks/maven.yml
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'
+  - include: tasks/intelliJCommunity.yml
+    when: ansible_distribution == 'Ubuntu' or ansible_distribution_release == 'xenial'

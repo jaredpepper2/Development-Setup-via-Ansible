@@ -1,0 +1,13 @@
+##
+# Ansible playbook for setting up a Development Enviroment.
+#
+- hosts: localhost
+  become: yes
+  vars_files:
+    - roles/devTools/vars/main.yml
+  roles:
+    - common
+    - tools
+    - database
+    - devTools
+    - devOps
