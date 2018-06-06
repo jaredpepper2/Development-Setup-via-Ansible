@@ -5,19 +5,19 @@ case "$enviroment_type" in
 
 devOps | devops | Devops | DevOps)
 echo "Setting up a DevOps Enviroment on your machine"
-$enviroment_type = DevOps
+enviroment_type = "DevOps"
     ;;
 test | tester | Test | Tester)
 echo "Setting up a Tester Enviroment on your machine"
-$enviroment_type = Tester
+enviroment_type="Tester"
     ;;
 dev | development | Dev | Development)
 echo "Setting up a Development Enviroment on your machine"
-$enviroment_type = Developer
+enviroment_type = "Developer"
     ;;
 management | Managment | manage | Manage)
 echo "Setting up the Managment Enviroment on your machine"
-$enviroment_type = Managment
+enviroment_type = "Managment"
     ;;
 *)
 echo "Please select what enviroment you would like to set up on this machine, by passing in one of the following arguments into this script:"
