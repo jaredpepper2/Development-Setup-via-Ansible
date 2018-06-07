@@ -50,7 +50,7 @@ Clean_Up()
 {
   #Clean up
   echo "Cleaning Up"
-  sudo rm -rf /opt/Ansible
+  sudo rm -rf /tmp/Ansible
   sudo rm -rf /home/$me/Documents/Ansible
 }
 
